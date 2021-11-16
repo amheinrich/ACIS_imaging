@@ -10,6 +10,12 @@ from astropy.io import fits
 from pandas import read_csv
 from astropy.units import keV, Kelvin
 from astropy.constants import k_B
+
+#definitions
+home=path.expanduser('~')
+chipnames=['i0', 'i1', 'i2', 'i3', 's0', 's1','s2', 's3', 's4', 's5'] #this list indexes chip ids to names
+clusters=read_csv('/home/andy/chandra_obs/clusters.csv', index_col=0)
+ds9_preferences={'.img':['-scale log', '-cmap heat'], '.expmap':['-cmap a'], '.bkg':['-cmap b']}
 #Basic functions
 def bold(text):
     #prints bolded text
